@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <title>Lista de usuarios</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <nav>
+                    <a th:href="@{/agregar}">Agregar usuario</a>
+                    <a th:href="@{/listar}">Listar usuario</a>
+                    <a th:href="@{/shutdown}">Cerrar sesion</a>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div class="container-fluid text-center">
+                <h1>Lista de Usuarios</h1>
+            </div>
+            <div class="container-fluid text-center">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Usuario</th>
+                            <th>Contraseña</th>
+                            <th>Email</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

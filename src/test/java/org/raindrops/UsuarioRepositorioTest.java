@@ -1,9 +1,6 @@
 package org.raindrops;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.raindrops.usuario.Usuario;
 import org.raindrops.usuario.UsuarioRepositorio;
@@ -20,7 +17,7 @@ import java.util.Optional;
 public class UsuarioRepositorioTest {
 
     @Autowired
-    private UsuarioRepositorio rp;
+    private UsuarioRepositorio ur;
 
     @Test
     public void saveTest(){
@@ -30,38 +27,38 @@ public class UsuarioRepositorioTest {
         u.setEmail("raindrops.bsb@gmail.com");
         u.setEdad("25");
 
-        Usuario nuevo = rp.save(u);
+        Usuario nuevo = ur.save(u);
         Assertions.assertThat(nuevo).isNotNull();
         Assertions.assertThat(nuevo.getId()).isGreaterThan(0);
     }
 
     @Test
     public void listAllTest(){
-        Iterable<Usuario> usuario = rp.findAll();
+        Iterable<Usuario> usuario = ur.findAll();
         Assertions.assertThat(usuario).hasSizeGreaterThan(0);
         usuario.forEach(System.out::println);
     }
     @Test
     public void updateTest(){
         Integer i = 1;
-        Optional<Usuario> antiguo = rp.findById(i);
+        Optional<Usuario> antiguo = ur.findById(i);
         Usuario user = antiguo.get();
         user.setContrasenia("7minutes");
-        rp.save(user);
+        ur.save(user);
         Assertions.assertThat(user.getContrasenia()).isEqualTo("7minutes");
     }
     @Test
     public void getTest(){
         Integer i = 1;
-        Optional<Usuario> antiguo = rp.findById(i);
+        Optional<Usuario> antiguo = ur.findById(i);
         Assertions.assertThat(antiguo).isPresent();
         System.out.println(antiguo.get());
     }
     @Test
     public void deletedTest(){
         Integer i = 1;
-        rp.deleteById(i);
-        Optional<Usuario> antiguo = rp.findById(i);
+        ur.deleteById(i);
+        Optional<Usuario> antiguo = ur.findById(i);
         Assertions.assertThat(antiguo).isNotPresent();
     }
 }
