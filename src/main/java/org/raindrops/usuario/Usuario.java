@@ -57,4 +57,15 @@ public class Usuario {
     public void setEdad(String edad) {
         this.edad = edad;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", usuario='" + usuario + '\'' +
+                ", contrasenia='" + contrasenia + '\'' +
+                ", email='" + email + '\'' +
+                ", edad='" + edad + '\'' +
+                '}';
+    }
 }
