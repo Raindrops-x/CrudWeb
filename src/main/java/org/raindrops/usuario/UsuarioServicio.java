@@ -16,7 +16,4 @@ public class UsuarioServicio {
     public void agregarUsuario(Usuario usuario){
         ur.save(usuario);
     }
-    public void editarUsuario(){
-
-    }
 }

@@ -8,10 +8,14 @@
     <body>
         <header>
             <div>
-                <nav>
-                    <a th:href="@{/agregar}">Agregar usuario</a>
-                    <a th:href="@{/listar}">Listar usuario</a>
-                    <a th:href="@{/shutdown}">Cerrar sesion</a>
+                <nav class="navbar">
+                    <div class="justify-content-end container-fluid">
+                        <ul>
+                            <a th:href="@{/Usuarios/Agregar}">Agregar usuario</a>
+                            <a th:href="@{/Usuarios}">Listar usuario</a>
+                            <a th:href="@{/Shutdown}">Cerrar sesion</a>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -20,18 +24,29 @@
                 <h1>Lista de Usuarios</h1>
             </div>
             <div class="container-fluid text-center">
-                <table class="table">
-                    <thead>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Usuario</th>
+                            <th>Nombre</th>
                             <th>Contraseña</th>
                             <th>Email</th>
                             <th>Edad</th>
+                            <th>Controles</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr th:block th:each="usuario: ${listaDeUsuarios}">
+                            <td th:text="${usuario.id}"></td>
+                            <td th:text="${usuario.nombre}"></td>
+                            <td th:text="${usuario.contrasenia}"></td>
+                            <td th:text="${usuario.email}"></td>
+                            <td th:text="${usuario.edad}"></td>
+                            <td>
+                                <a>Editar</a>
+                                <a>Borrar</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

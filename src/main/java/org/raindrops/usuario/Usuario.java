@@ -10,13 +10,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false,length = 20)
-    private String usuario;
+    private String nombre;
     @Column(nullable = false,length = 20)
     private String contrasenia;
     @Column(nullable = false,unique = true,length = 50)
     private String email;
     @Column(nullable = false,length = 2)
-    private String edad;
+    private Integer edad;
+    @Column(nullable = false)
+    private boolean estado;
 
     public Integer getId() {
         return id;
@@ -26,12 +28,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getContrasenia() {
@@ -50,19 +52,27 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
                 "id=" + id +
-                ", usuario='" + usuario + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", contrasenia='" + contrasenia + '\'' +
                 ", email='" + email + '\'' +
                 ", edad='" + edad + '\'' +

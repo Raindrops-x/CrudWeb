@@ -6,15 +6,19 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 <body>
-    <header>
-        <div>
-            <nav>
-                <a th:href="@{/agregar}">Agregar usuario</a>
-                <a th:href="@{/listar}">Listar usuario</a>
-                <a th:href="@{/shutdown}">Cerrar sesion</a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div>
+        <nav class="navbar">
+            <div class="justify-content-end container-fluid">
+                <ul>
+                    <a th:href="@{/Usuarios/Agregar}">Agregar usuario</a>
+                    <a th:href="@{/Usuarios}">Listar usuario</a>
+                    <a th:href="@{/Shutdown}">Cerrar sesion</a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
     <div class="container-fluid text-center">
         <h1>Aplicacion en java</h1>
         <a class="h2">UwU</a>

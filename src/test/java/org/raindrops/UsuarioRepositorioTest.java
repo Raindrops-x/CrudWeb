@@ -22,10 +22,10 @@ public class UsuarioRepositorioTest {
     @Test
     public void saveTest(){
         Usuario u = new Usuario();
-        u.setUsuario("Rain");
+        u.setNombre("Rain");
         u.setContrasenia("1dsa@S!_2s_!S-2");
         u.setEmail("raindrops.bsb@gmail.com");
-        u.setEdad("25");
+        u.setEdad(Integer.valueOf("25"));
 
         Usuario nuevo = ur.save(u);
         Assertions.assertThat(nuevo).isNotNull();
